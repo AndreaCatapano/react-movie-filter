@@ -21,6 +21,10 @@ function App() {
       result = moviesData.filter(movie => movie.genre === searchedGenre);
     }
 
+    if (searchTitle !== '') {
+      result = result.filter(movie => movie.title.includes(searchTitle));
+    }
+
     setMovies(result);
   }, [searchedGenre, searchTitle])
 
