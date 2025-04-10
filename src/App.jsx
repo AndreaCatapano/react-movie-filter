@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     let result = movies;
     if (searchedGenre !== '') {
-      result = moviesData.filter(movie => movie.genre === searchedGenre);
+      result = movies.filter(movie => movie.genre === searchedGenre);
     }
 
     if (searchTitle !== '') {
