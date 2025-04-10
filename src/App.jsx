@@ -8,8 +8,15 @@ import './App.css'
 
 function App() {
 
+  const [movies, setMovies] = useState(moviesData);
+
   return (
     <>
+      <ul>
+        {movies.map((movie, index) => (
+          <li key={index}>{movie.title}</li>
+        ))}
+      </ul>
     </>
   )
 }
