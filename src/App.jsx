@@ -13,7 +13,15 @@ function App() {
 
 
 
-  useEffect(() => { console.log(searchedGenre) }, [searchedGenre])
+  useEffect(() => {
+    let result = moviesData;
+    if (searchedGenre !== '') {
+      console.log(searchedGenre)
+      result = moviesData.filter(movie => movie.genre === searchedGenre);
+    }
+
+    setMovies(result);
+  }, [searchedGenre])
 
   return (
     <>
